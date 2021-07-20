@@ -34,17 +34,23 @@ public class PDFAdapter extends ArrayAdapter<File> {
 
     @Override
     public int getViewTypeCount() {
-        if(al_pdf.size()>0){
-            return  al_pdf.size();
-        }
-        else return 1;
+        if (al_pdf.size() > 0) {
+            return al_pdf.size();
+        } else return 1;
     }
 
     @Override
-    public View getView(final int position,  View convertView,  ViewGroup parent) {
-if(convertView==null){
-    convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_pdf , parent , false);
-}
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_pdf, parent, false);
+       viewHolder = new ViewHolder();
+       viewHolder.tv_filename=convertView.findViewById(R.id.tv_file);
+       convertView.setTag(viewHolder);
+        }
+        else
+        {
+            viewHolder= (ViewHolder) convertView.getTag();
+        }
     }
 
     public class ViewHolder {
