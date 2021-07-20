@@ -1,6 +1,7 @@
 package com.example.android.pdfreader;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -37,6 +38,13 @@ public class PDFAdapter extends ArrayAdapter<File> {
             return  al_pdf.size();
         }
         else return 1;
+    }
+
+    @Override
+    public View getView(final int position,  View convertView,  ViewGroup parent) {
+if(convertView==null){
+    convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_pdf , parent , false);
+}
     }
 
     public class ViewHolder {
