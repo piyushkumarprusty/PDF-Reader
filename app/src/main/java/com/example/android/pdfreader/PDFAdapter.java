@@ -17,7 +17,7 @@ public class PDFAdapter extends ArrayAdapter<File> {
     ArrayList<File> al_pdf;
 
     public PDFAdapter( Context context,  ViewHolder viewHolder, ArrayList<File> al_pdf) {
-        super(context, resource);
+        super(context, R.layout.adapter_pdf,al_pdf);
         this.viewHolder = viewHolder;
         this.al_pdf = al_pdf;
     }
