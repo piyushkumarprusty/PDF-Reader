@@ -51,6 +51,8 @@ public class PDFAdapter extends ArrayAdapter<File> {
         {
             viewHolder= (ViewHolder) convertView.getTag();
         }
+        viewHolder.tv_filename.setText(al_pdf.get(position).getName());
+        return convertView;
     }
 
     public class ViewHolder {
